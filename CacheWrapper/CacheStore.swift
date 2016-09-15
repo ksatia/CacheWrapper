@@ -17,4 +17,5 @@ class CacheStore: NSObject {
     // Need a file manager property, an NSURL property to route to that file directory
     // The cache that will be implemented is just an instance of NSCache (performance with hash functions) - should be internal constant since we don't want anybody importing the framework to have direct access to the internal structure
     //  Create a dispatch queue OR an NSOperation depending on what we end up doing with API response caching.
+    // Consider using enum in CacheStore to determine how far off object expiration is. NSDate has NSDate.distanceFuture(), etc.
 }
