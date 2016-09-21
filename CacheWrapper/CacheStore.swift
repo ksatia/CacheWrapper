@@ -67,7 +67,9 @@ class CacheStore: NSObject {
             try self.init(cacheName:cacheName, cacheDirectory: nil, fileProtection: nil)
         }
         catch let error as NSError {
-            fatalError("Directory creation failed: \(error.localizedDescription)")
+            print(error.localizedDescription)
+            throw directoryErrors.couldNotCreate
+            //fatalError("Directory creation failed: \(error.localizedDescription)")
         }
     }
  
