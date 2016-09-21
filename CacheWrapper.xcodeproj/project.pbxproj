@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2AD133A41D8B402400A2A764 /* CacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD133A31D8B402400A2A764 /* CacheStore.swift */; };
+		2AD133A61D906F4A00A2A764 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD133A51D906F4A00A2A764 /* TestClass.swift */; };
 		2AFF426E1D886625007BF2D9 /* CacheWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AFF426D1D886625007BF2D9 /* CacheWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2AFF427C1D89BA69007BF2D9 /* CachedObjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF427B1D89BA69007BF2D9 /* CachedObjectWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2AD133A31D8B402400A2A764 /* CacheStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheStore.swift; sourceTree = "<group>"; };
+		2AD133A51D906F4A00A2A764 /* TestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		2AFF426A1D886625007BF2D9 /* CacheWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CacheWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AFF426D1D886625007BF2D9 /* CacheWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheWrapper.h; sourceTree = "<group>"; };
 		2AFF426F1D886625007BF2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				2AFF426D1D886625007BF2D9 /* CacheWrapper.h */,
 				2AFF427B1D89BA69007BF2D9 /* CachedObjectWrapper.swift */,
 				2AD133A31D8B402400A2A764 /* CacheStore.swift */,
+				2AD133A51D906F4A00A2A764 /* TestClass.swift */,
 				2AFF426F1D886625007BF2D9 /* Info.plist */,
 			);
 			path = CacheWrapper;
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD133A41D8B402400A2A764 /* CacheStore.swift in Sources */,
+				2AD133A61D906F4A00A2A764 /* TestClass.swift in Sources */,
 				2AFF427C1D89BA69007BF2D9 /* CachedObjectWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

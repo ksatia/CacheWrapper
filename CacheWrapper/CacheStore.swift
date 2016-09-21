@@ -22,16 +22,28 @@ class CacheStore: NSObject {
     let cache = NSCache<AnyObject, AnyObject>()
     let fileManager = FileManager ()
     let name: String
-    let directory: NSURL
+    var directory: URL
     
     
     // Declare as public so that the function is accessible to source files outside of this module (ie files being built by other developers who are importing this framework)
     
-    public init(cacheName: String, directory: NSURL?, fileProtection: String? = nil) throws {
-        // attribute name to both class property for cache name
-        // NSCache has a name property already which seems to be used to differentiate between caches when a delegate method is called when objects are about to be evicted from the cache. This allows you to see which caches are evicting objects.
-        // We're using the name constant for creating a file path for each cache created.
+    public init(cacheName: String, cacheDirectory: URL?, fileProtection: String? = nil) throws {
+        
+        // NSCache has a name property already which seems to be used to differentiate between caches when a delegate method is called when objects are about to be evicted from the cache. This allows you to see which caches are evicting objects. Not being used here.
         self.name = cacheName
-        self.directory = directory!
+        
+        //provide developers with the ability to specify a directory of their choosing - may lead to problems in the future. Consider pulling out this functionality and just using the cache name to create an appropriate filepath.
+        if let direc = cacheDirectory {
+            self.directory = direc
+        }
+            
+        else {
+            let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+            self.directory = url.appendingPathComponent("ksatia.cache/\(cacheName)")
+        }
+        
+        // use fileManager property to create directory (try and catch the error, log a statement if unable to create directory)
+        
     }
+    
 }

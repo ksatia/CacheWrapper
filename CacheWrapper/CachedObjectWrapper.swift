@@ -13,8 +13,9 @@ import Foundation
 class CachedObjectWrapper: NSObject {
     let value: AnyObject
     let expiration: NSDate
-    let hasExpired: Bool = {
-        return expiration.isInThePast
+    
+    var hasExpired: Bool {
+        return self.expiration.isInThePast
     }
     
     //designated initializer
@@ -24,12 +25,12 @@ class CachedObjectWrapper: NSObject {
         super.init()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         guard let val = aDecoder.decodeObject(forKey: "value"),
             let expiry = aDecoder.decodeObject(forKey: "expiration") as? NSDate else {
                 return nil
         }
-        self.value = val
+        self.value = val as AnyObject
         self.expiration = expiry
         super.init()
     }
